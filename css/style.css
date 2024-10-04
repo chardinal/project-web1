@@ -96,7 +96,7 @@ p {
 ---------------------------------*/
 
 #header_wrapper {
-    background: #ffffff;
+    background: #000000;
     padding: 20px 0px;
 }
 
@@ -211,7 +211,7 @@ p {
 ---------------------------------*/
 
 .top_cont_outer {
-    background: #df0031;
+    background: #191919;
     position: relative;
 }
 
@@ -279,7 +279,7 @@ a.read_more2 {
     -moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     background: transparent;
-    color: #fff;
+    color: #242424;
     border: 1px solid #fff;
 }
 
@@ -302,7 +302,7 @@ a.read_more2:hover {
 
 #service {
     padding: 60px 0px;
-    background: #EFEFEF;
+    background: #191919;
 }
 
 .service_wrapper {
@@ -319,7 +319,7 @@ a.read_more2:hover {
 }
 
 .service_icon {
-    border: 2px solid #df0031;
+    border: 2px solid #ffffff;
     border-radius: 50%;
     width: 90px;
     height: 90px;
@@ -327,11 +327,11 @@ a.read_more2:hover {
 }
 
 .service_icon.icon2 {
-    border: 2px solid #df0031;
+    border: 2px solid #ffffff;
 }
 
 .service_icon.icon3 {
-    border: 2px solid #df0031;
+    border: 2px solid #ffffff;
 }
 
 .service_icon span {
@@ -343,7 +343,7 @@ a.read_more2:hover {
 }
 
 .service_icon i {
-    color: #df0031;
+    color: #ffffff;
     font-size: 40px;
     margin-top: 0;
     position: relative;
@@ -355,13 +355,13 @@ a.read_more2:hover {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     font-size: 18px;
-    color: #111111;
+    color: #ffffff;
     margin: 35px 0 18px;
 }
 
 .service_block p {
     font-size: 16px;
-    color: #888888;
+    color: #ffffff;
     margin: 0px;
 }
 	
@@ -522,7 +522,7 @@ a.contact_btn:hover {
 }
 
 .Portfolio-nav li a.current {
-    background: #df0031;
+    background: #191919;
     color: #fff;
     text-decoration: none;
 }
