@@ -1,1 +1,0 @@
-rian was here!! wailah enakkk!y
