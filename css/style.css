@@ -179,7 +179,7 @@ p {
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: #ffd000;
+    color: #e20000;
     background-color: transparent;
 }
 
@@ -284,8 +284,8 @@ a.read_more2 {
 }
 
 a.read_more2:hover {
-    background: #fff;
-    color: #df0031;
+    background: #080808;
+    color: #ffffff;
     border: 1px solid #fff;
 }
 
@@ -302,7 +302,7 @@ a.read_more2:hover {
 
 #service {
     padding: 60px 0px;
-    background: #191919;
+    background: #181818;
 }
 
 .service_wrapper {
@@ -402,7 +402,7 @@ a.read_more2:hover {
 
 .service-list-col1 i {
     display:;
-    color: #888;
+    color: #000000;
     font-size: 19px;
     font-style: normal;
     line-height: 20px;
