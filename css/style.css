@@ -309,15 +309,13 @@ a.read_more2:hover {
 
 #service {
     padding: 60px 0px;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     background: #111111;
-=======
+
     background: #191919;
->>>>>>> 81f89e7a984836e2f46079ee88108a9040c5bf09
-=======
+
     background: #181818;
->>>>>>> 624808da8b04b60f473124b8d1a1c0478a55956e
+
 }
 
 .service_wrapper {
@@ -358,15 +356,13 @@ a.read_more2:hover {
 }
 
 .service_icon i {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     color: #e9e9e9;
-=======
+
     color: #ffffff;
->>>>>>> 81f89e7a984836e2f46079ee88108a9040c5bf09
-=======
+
     color: #ffffff;
->>>>>>> 624808da8b04b60f473124b8d1a1c0478a55956e
+
     font-size: 40px;
     margin-top: 0;
     position: relative;
@@ -635,7 +631,7 @@ img {
 
 
 .client_logos {
-    background: #1a1a1a;
+    background: #ffffff;
     padding: 60px 0;
     margin-top: 60px;
 }
