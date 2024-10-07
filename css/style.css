@@ -62,7 +62,7 @@ body {
 
 h2 {
     font-size: 38px;
-    color: #222222;
+    color: #080808;
     font-family: 'Raleway', sans-serif;
     font-weight: normal;
     margin: 0px 0 25px 0;
@@ -186,7 +186,7 @@ p {
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: #e20000;
+    color: #e40000;
     background-color: transparent;
 }
 
@@ -285,8 +285,8 @@ a.read_more2 {
     transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
-    background: transparent;
-    color: #242424;
+    background:#3C3A3A;
+    color: #fafafa;
     border: 1px solid #fff;
 }
 
@@ -511,7 +511,7 @@ a.contact_btn:hover {
 }
 
 .Portfolio-nav li a:hover {
-    background: #df0031;
+    background: #444041;
     color: #fff;
     text-decoration: none;
 }
@@ -540,6 +540,15 @@ a.contact_btn:hover {
     opacity: 0.6;
 }
 
+.Portfolio-box {
+    text-align: center;
+    width: 350px;
+    overflow: hidden;
+    float: left;
+    padding: 12px 0px;
+    margin: 10px; /* Add this line to add a gap above, below, left, and right of each image */
+}
+
 .Portfolio-nav li a.current {
     background: #191919;
     color: #fff;
@@ -547,7 +556,7 @@ a.contact_btn:hover {
 }
 
 img {
-    max-width: 100%;
+    max-width: 98%;
 }
 
 /* no transition on .isotope container */
