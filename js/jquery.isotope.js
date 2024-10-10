@@ -7,17 +7,16 @@
 
   'use strict';
 
-  // get global vars
+
   var document = window.document;
   var Modernizr = window.Modernizr;
 
-  // helper function
+
   var capitalize = function( str ) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
-  // ========================= getStyleProperty by kangax ===============================
-  // http://perfectionkills.com/feature-testing-css-properties/
+
 
   var prefixes = 'Moz Webkit O Ms'.split(' ');
 
@@ -25,15 +24,14 @@
     var style = document.documentElement.style,
         prefixed;
 
-    // test standard property first
+    
     if ( typeof style[propName] === 'string' ) {
       return propName;
     }
 
-    // capitalize
     propName = capitalize( propName );
 
-    // test vendor specific properties
+
     for ( var i=0, len = prefixes.length; i < len; i++ ) {
       prefixed = prefixes[i] + propName;
       if ( typeof style[ prefixed ] === 'string' ) {
@@ -46,21 +44,14 @@
       transitionProp = getStyleProperty('transitionProperty');
 
 
-  // ========================= miniModernizr ===============================
-  // <3<3<3 and thanks to Faruk and Paul for doing the heavy lifting
+  
 
-  /*!
-   * Modernizr v1.6ish: miniModernizr for Isotope
-   * http://www.modernizr.com
-   *
-   * Developed by:
-   * - Faruk Ates  http://farukat.es/
-   * - Paul Irish  http://paulirish.com/
-   *
-   * Copyright (c) 2009-2010
-   * Dual-licensed under the BSD or MIT licenses.
-   * http://www.modernizr.com/license/
-   */
+  
+
+
+
+
+      
 
   /*
    * This version whittles down the script just to check support for
@@ -74,7 +65,10 @@
 
     csstransforms3d: function() {
       var test = !!getStyleProperty('perspective');
-      // double check for Chrome's false positive
+
+      
+
+
       if ( test ) {
         var vendorCSSPrefixes = ' -o- -moz- -ms- -webkit- -khtml- '.split(' '),
             mediaQuery = '@media (' + vendorCSSPrefixes.join('transform-3d),(') + 'modernizr)',
@@ -98,15 +92,15 @@
   var testName;
 
   if ( Modernizr ) {
-    // if there's a previous Modernzir, check if there are necessary tests
+
     for ( testName in tests) {
       if ( !Modernizr.hasOwnProperty( testName ) ) {
-        // if test hasn't been run, use addTest to run it
+      
         Modernizr.addTest( testName, tests[ testName ] );
       }
     }
   } else {
-    // or create new mini Modernizr that just has the 3 tests
+   
     Modernizr = window.Modernizr = {
       _version : '1.6ish: miniModernizr for Isotope'
     };
@@ -114,30 +108,22 @@
     var classes = ' ';
     var result;
 
-    // Run through tests
+ 
+
     for ( testName in tests) {
       result = tests[ testName ]();
       Modernizr[ testName ] = result;
       classes += ' ' + ( result ?  '' : 'no-' ) + testName;
     }
 
-    // Add the new classes to the <html> element.
+   
     $('html').addClass( classes );
   }
 
 
-  // ========================= isoTransform ===============================
-
-  /**
-   *  provides hooks for .css({ scale: value, translate: [x, y] })
-   *  Progressively enhanced CSS transforms
-   *  Uses hardware accelerated 3D transforms for Safari
-   *  or falls back to 2D transforms.
-   */
-
   if ( Modernizr.csstransforms ) {
 
-        // i.e. transformFnNotations.scale(0.5) >> 'scale3d( 0.5, 0.5, 1)'
+        
     var transformFnNotations = Modernizr.csstransforms3d ?
       { // 3D transform functions
         translate : function ( position ) {
@@ -175,9 +161,7 @@
         transformObj[ fnName ] = transformFnNotations[ fnName ]( transformValue );
       }
 
-      // get proper order
-      // ideally, we could loop through this give an array, but since we only have
-      // a couple transforms we're keeping track of, we'll do it like so
+     
       var translateFn = transformObj.translate || '',
           scaleFn = transformObj.scale || '',
           // sorting so translate always comes first
@@ -196,10 +180,7 @@
 
     $.cssHooks.scale = {
       set: function( elem, value ) {
-        // uncomment this bit if you want to properly parse strings
-        // if ( typeof value === 'string' ) {
-        //   value = parseFloat( value );
-        // }
+      
         setIsoTransform( elem, 'scale', value );
       },
       get: function( elem, computed ) {
@@ -220,18 +201,7 @@
     $.cssHooks.translate = {
       set: function( elem, value ) {
 
-        // uncomment this bit if you want to properly parse strings
-        // if ( typeof value === 'string' ) {
-        //   value = value.split(' ');
-        // }
-        //
-        // var i, val;
-        // for ( i = 0; i < 2; i++ ) {
-        //   val = value[i];
-        //   if ( typeof val === 'string' ) {
-        //     val = parseInt( val );
-        //   }
-        // }
+      
 
         setIsoTransform( elem, 'translate', value );
       },
@@ -260,15 +230,7 @@
 
   // ========================= smartresize ===============================
 
-  /*
-   * smartresize: debounced resize event for jQuery
-   *
-   * latest version and complete README available on Github:
-   * https://github.com/louisremi/jquery.smartresize.js
-   *
-   * Copyright 2011 @louis_remi
-   * Licensed under the MIT license.
-   */
+
 
   var $event = $.event,
       dispatchMethod = $.event.handle ? 'handle' : 'dispatch',
@@ -436,10 +398,7 @@
       return $atoms;
     },
 
-    // _init fires when your instance is first created
-    // (from the constructor above), and when you
-    // attempt to initialize the widget again (by the bridge)
-    // after it has already been initialized.
+   
     _init : function( callback ) {
 
       this.$filteredAtoms = this._filter( this.$allAtoms );
@@ -601,8 +560,7 @@
 
     // ====================== General Layout ======================
 
-    // used on collection of atoms (should be filtered, and sorted before )
-    // accepts atoms-to-be-laid-out to start with
+  
     layout : function( $elems, callback ) {
 
       var layoutMode = this.options.layoutMode;
@@ -622,8 +580,7 @@
     },
 
     _processStyleQueue : function( $elems, callback ) {
-      // are we animating the layout arrangement?
-      // use plugin-ish syntax for css or animate
+
       var styleFn = !this.isLaidOut ? 'css' : (
             this.isUsingJQueryAnimation ? 'animate' : 'css'
           ),
@@ -687,8 +644,7 @@
             }
             testElem = styleObj.$el;
           }
-          // get transition duration of the first element in that object
-          // yeah, this is inexact
+      
           var duration = parseFloat( getComputedStyle( testElem[0] )[ transitionDurProp ] );
           if ( duration > 0 ) {
             processor = function( i, obj ) {
@@ -727,14 +683,10 @@
 
     },
 
-    // ====================== Convenience methods ======================
-
-    // ====================== Adding items ======================
-
-    // adds a jQuery object of items to a isotope container
+    
     addItems : function( $content, callback ) {
       var $newAtoms = this._getAtoms( $content );
-      // add new atoms to atoms pools
+      
       this.$allAtoms = this.$allAtoms.add( $newAtoms );
 
       if ( callback ) {
@@ -742,8 +694,7 @@
       }
     },
 
-    // convienence method for adding elements properly to any layout
-    // positions items, hides them, then animates them back in <--- very sezzy
+ 
     insert : function( $content, callback ) {
       // position items
       this.element.append( $content );
@@ -832,7 +783,7 @@
       this.reLayout( callback );
     },
 
-    // destroys widget, returns elements and container back (close) to original style
+ 
     destroy : function() {
 
       var usingTransforms = this.usingTransforms;
@@ -870,9 +821,7 @@
 
     // ====================== LAYOUTS ======================
 
-    // calculates number of rows or columns
-    // requires columnWidth or rowHeight to be set on namespaced object
-    // i.e. this.masonry.columnWidth = 200
+
     _getSegments : function( isRows ) {
       var namespace = this.options.layoutMode,
           measure  = isRows ? 'rowHeight' : 'columnWidth',
@@ -890,9 +839,9 @@
       segments = Math.floor( containerSize / segmentSize );
       segments = Math.max( segments, 1 );
 
-      // i.e. this.masonry.cols = ....
+      
       this[ namespace ][ segmentsName ] = segments;
-      // i.e. this.masonry.columnWidth = ...
+      
       this[ namespace ][ measure ] = segmentSize;
 
     },
@@ -934,8 +883,8 @@
           // if brick spans only one column, just like singleMode
           instance._masonryPlaceBrick( $this, props.colYs );
         } else {
-          // brick spans more than one column
-          // how many different places could this brick fit horizontally
+         
+
           var groupCount = props.cols + 1 - colSpan,
               groupY = [],
               groupColY,
@@ -954,8 +903,7 @@
       });
     },
 
-    // worker method that places brick in the columnSet
-    //   with the the minY
+    
     _masonryPlaceBrick : function( $brick, setY ) {
       // get the minimum Y value from the columns
       var minimumY = Math.min.apply( Math, setY ),
@@ -1284,24 +1232,7 @@
   };
 
 
-  // ======================= imagesLoaded Plugin ===============================
-  /*!
-   * jQuery imagesLoaded plugin v1.1.0
-   * http://github.com/desandro/imagesloaded
-   *
-   * MIT License. by Paul Irish et al.
-   */
-
-
-  // $('#my-container').imagesLoaded(myFunction)
-  // or
-  // $('img').imagesLoaded(myFunction)
-
-  // execute a callback when all images have loaded.
-  // needed because .load() doesn't work on cached images
-
-  // callback function gets image collection as argument
-  //  `this` is the container
+  //*======================= imagesLoaded Plugin ===============================
 
   $.fn.imagesLoaded = function( callback ) {
     var $this = this,
@@ -1331,10 +1262,9 @@
     }
 
     $images.bind( 'load.imagesLoaded error.imagesLoaded',  imgLoaded ).each( function() {
-      // cached images don't fire load sometimes, so we reset src.
+      
       var src = this.src;
-      // webkit hack from http://groups.google.com/group/jquery-dev/browse_thread/thread/eee6ab7b2da50e1f
-      // data uri bypasses webkit log warning (thx doug jones)
+      
       this.src = blank;
       this.src = src;
     });
@@ -1343,8 +1273,7 @@
   };
 
 
-  // helper function for logging errors
-  // $.error breaks jQuery chaining
+  
   var logError = function( message ) {
     if ( window.console ) {
       window.console.error( message );
@@ -1352,12 +1281,8 @@
   };
 
   // =======================  Plugin bridge  ===============================
-  // leverages data method to either create or return $.Isotope constructor
-  // A bit from jQuery UI
-  //   https://github.com/jquery/jquery-ui/blob/master/ui/jquery.ui.widget.js
-  // A bit from jcarousel
-  //   https://github.com/jsor/jcarousel/blob/master/lib/jquery.jcarousel.js
-
+ 
+  
   $.fn.isotope = function( options, callback ) {
     if ( typeof options === 'string' ) {
       // call method
@@ -1390,8 +1315,7 @@
         }
       });
     }
-    // return jQuery object
-    // so plugin methods do not have to
+  
     return this;
   };
 
