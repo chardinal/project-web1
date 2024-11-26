@@ -150,7 +150,7 @@ p {
 }
 
 .navStyle ul li:first-child {
-	/*margin:0px;*/;
+	/*margin:0px;*/
 }
 
 .navStyle ul li:last-child {
@@ -995,6 +995,77 @@ img {
     color: #222;
 }
 
+/*Pricing 
+----------------------------*/
+  .pricing-table {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .pricing-table h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+  }
+  
+  .plans {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .plan {
+    background: #2b2b2b;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+  }
+  
+  .plan h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color :#ffffff
+  }
+  
+  .plan .price {
+    color: #ff9900;
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .plan ul li {
+    margin: 10px 0;
+    font-size: 0.95em;
+    color :#dfdfdf
+  }
+  
+  .plan .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #c70000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .plan .btn:hover {
+    background: #4e0000;
+  }
+  
+
+
 /* Footer
 ---------------------------------*/
 
@@ -1685,7 +1756,7 @@ margin: 0 18px;
 .page_section.team{
 padding: 40px 0;
 }
-, #clients {
+#clients {
 padding: 40px 0;
 }
 .client_logos ul li {
